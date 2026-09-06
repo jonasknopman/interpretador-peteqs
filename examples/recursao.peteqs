@@ -1,0 +1,14 @@
+função fatorial(entradas: n)
+inicio
+    se n <= 1 então
+        resultado <- 1
+    senão
+        resultado <- n * fatorial(n - 1)
+    fim se
+fim
+
+inicio
+    imprima "Calcular o fatorial de:"
+    leia x
+    imprima x, "! = ", fatorial(x)
+fim

@@ -1,0 +1,16 @@
+{
+  "package": "peteqs",
+  "modules": [
+    "__init__.py",
+    "errors.py",
+    "tokens.py",
+    "lexer.py",
+    "ast_nodes.py",
+    "parser.py",
+    "runtime.py",
+    "builtins.py",
+    "interpreter.py",
+    "io_base.py",
+    "_web.py"
+  ]
+}

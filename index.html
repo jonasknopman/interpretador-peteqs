@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editor PETEQS</title>
+  <meta name="description" content="Escreva, execute e aprenda lógica de programação em português com a pseudolinguagem PETEQS." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "@codemirror/state": "https://esm.sh/@codemirror/state@6.4.1",
+      "@lezer/highlight": "https://esm.sh/@lezer/highlight@1.2.1?external=@lezer/common",
+      "@lezer/common": "https://esm.sh/@lezer/common@1.2.1",
+      "@codemirror/view": "https://esm.sh/@codemirror/view@6.34.1?external=@codemirror/state",
+      "@codemirror/commands": "https://esm.sh/@codemirror/commands@6.7.1?external=@codemirror/state,@codemirror/view",
+      "@codemirror/language": "https://esm.sh/@codemirror/language@6.10.3?external=@codemirror/state,@codemirror/view,@lezer/highlight,@lezer/common"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Editor PETEQS</h1>
+      <p class="subtitle">Escreva, execute e aprenda lógica de programação em português</p>
+      <p class="note">Versão de teste, em desenvolvimento.</p>
+    </div>
+    <button id="btn-theme" class="ghost-btn" type="button">Modo claro</button>
+  </header>
+
+  <div class="toolbar">
+    <button id="btn-run" class="primary-btn" type="button" data-mode="run">▶ Executar</button>
+    <button id="btn-clear" class="tool-btn" type="button">✕ Limpar</button>
+    <button id="btn-open" class="tool-btn" type="button">📂 Abrir</button>
+    <button id="btn-save" class="tool-btn" type="button">💾 Salvar</button>
+    <button id="btn-copy" class="tool-btn" type="button">📋 Copiar p/ Word</button>
+    <button id="btn-help" class="tool-btn" type="button">❔ Ajuda</button>
+  </div>
+
+  <dialog id="help-dialog" class="help-dialog">
+    <article>
+      <button id="help-close" class="help-close" type="button" aria-label="Fechar">✕</button>
+      <h2>Sintaxe PETEQS — referência rápida</h2>
+      <p class="help-hint">Palavras-chave não distinguem maiúsculas de minúsculas e o acento é opcional.</p>
+
+      <h3>Estrutura</h3>
+      <pre>variáveis públicas          { opcional }
+    Far, Cel
+
+função nome(entradas: a   saídas: b)
+inicio
+    resultado &lt;- a + 1     { 'resultado' = valor de retorno }
+fim
+
+inicio
+    { comandos do programa principal }
+fim</pre>
+
+      <h3>Comandos</h3>
+      <ul>
+        <li><code>x &lt;- expressão</code> — atribuição</li>
+        <li><code>leia x</code> / <code>leia a, b</code> — o programa pausa e espera você digitar</li>
+        <li><code>imprima a, b, "texto"</code> — escreve (os itens são concatenados)</li>
+        <li><code>se cond então … senão … fim se</code></li>
+        <li><code>enquanto cond faça … fim enquanto</code></li>
+        <li><code>para i &lt;- 1 até N faça … próximo i</code> (ou <code>fim para</code>)</li>
+        <li><code>Nome(args)</code> ou <code>Nome</code> — chama procedimento/função</li>
+      </ul>
+
+      <h3>Operadores (da maior para a menor prioridade)</h3>
+      <ol>
+        <li><code>não</code>, <code>-</code>, <code>+</code> (unários)</li>
+        <li><code>*</code> <code>/</code> <code>mod</code> <code>e</code></li>
+        <li><code>+</code> <code>-</code> <code>ou</code></li>
+        <li><code>=</code> <code>&lt;&gt;</code> <code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></li>
+      </ol>
+      <p class="help-hint">
+        <code>/</code> entre dois inteiros dá divisão inteira (<code>13 / 2</code> → 6);
+        com um número real dá divisão real (<code>13 / 2.0</code> → 6.5).
+      </p>
+
+      <h3>Vetores e cadeias</h3>
+      <ul>
+        <li>Índices começam em <strong>1</strong>: <code>v[1] &lt;- 10</code>, <code>frase[3]</code></li>
+        <li><code>leia frase</code> guarda a cadeia digitada; <code>frase[3]</code> devolve o 3º caractere</li>
+        <li>Literal de vetor: <code>[10, 20, 30]</code></li>
+      </ul>
+
+      <h3>Funções embutidas</h3>
+      <ul>
+        <li><code>ord('A')</code> → 65 &nbsp; · &nbsp; <code>chr(65)</code> → 'A'</li>
+        <li><code>tamanho(texto)</code> / <code>tamanho(vetor)</code> → quantidade de elementos</li>
+      </ul>
+
+      <h3>Comentários</h3>
+      <p><code>// até o fim da linha</code> &nbsp; e &nbsp; <code>{ bloco }</code></p>
+    </article>
+  </dialog>
+
+  <main class="workspace">
+    <section class="pane pane-editor">
+      <div id="editor" class="editor-host"></div>
+    </section>
+    <section class="pane pane-terminal">
+      <div class="pane-head">
+        <span class="pane-title">Terminal</span>
+        <span id="status" class="status"></span>
+      </div>
+      <div id="terminal" class="terminal-host"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span class="examples-label">Exemplos:</span>
+    <div id="examples" class="examples"></div>
+    <span class="ref">
+      Referências:
+      <a href="https://cecierj.edu.br/videoaulas" target="_blank" rel="noopener">cecierj.edu.br/videoaulas</a>
+      → Projeto e Desenvolvimento de Algoritmo
+    </span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+inicio
+    imprima "Qual é o seu nome?"
+    leia nome
+    imprima "Olá, ", nome, "!"
+fim

@@ -1,0 +1,11 @@
+inicio
+    imprima "Digite um número:"
+    leia x
+    se x > 0 então
+        imprima "Positivo"
+    senão se x < 0 então
+        imprima "Negativo"
+    senão
+        imprima "Zero"
+    fim se
+fim

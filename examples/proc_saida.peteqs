@@ -1,0 +1,12 @@
+{ Procedimento com parâmetro de saída (passagem por referência) }
+procedimento Dobro(entradas: n   saídas: resultado)
+inicio
+    resultado <- n * 2
+fim
+
+inicio
+    imprima "Digite um número:"
+    leia x
+    Dobro(x, d)
+    imprima "O dobro de ", x, " é ", d
+fim

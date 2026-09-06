@@ -1,0 +1,5 @@
+inicio
+    para i <- 1 até 5 faça
+        imprima "passo ", i
+    próximo i
+fim

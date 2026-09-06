@@ -1,0 +1,11 @@
+procedimento Converte(entradas: USD   saídas: BRL)
+inicio
+    BRL <- 5.75 * USD
+fim
+
+inicio
+    imprima "Quantos dólares?"
+    leia dolar
+    Converte(dolar, real)
+    imprima "R$ ", real
+fim
