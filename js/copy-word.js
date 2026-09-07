@@ -63,7 +63,7 @@ function toHtml(code) {
   }
 
   return (
-    `<pre style="font-family:Consolas,'Courier New',monospace;font-size:11pt;` +
+    `<pre style="font-family:'Courier New',monospace;font-size:12pt;` +
     `white-space:pre;line-height:1.35">${out}</pre>`
   );
 }
