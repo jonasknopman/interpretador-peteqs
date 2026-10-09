@@ -15,6 +15,7 @@ export class Terminal {
   clear() {
     this.output.textContent = "";
     this._lineBuffer = "";
+    this._partialEl = null;
     this._removeInputLine();
   }
 
@@ -41,39 +42,33 @@ export class Terminal {
     const parts = this._lineBuffer.split("\n");
     this._lineBuffer = parts.pop();
     for (const line of parts) {
-      this._appendLine(line, "term-line");
+      this._setLine(line, false);
     }
     if (this._lineBuffer) {
-      this._appendLine(this._lineBuffer, "term-line term-line-partial", true);
+      this._setLine(this._lineBuffer, true);
     }
     this._scroll();
   }
 
-  _appendLine(text, className, replacePartial = false) {
-    if (replacePartial && this._partialEl) {
-      this._partialEl.textContent = text;
-      return;
+  /* Escreve `text` na linha parcial em andamento (se houver) ou numa linha
+   * nova. `partial` = a linha ainda pode receber mais texto (sem '\n'). */
+  _setLine(text, partial, extraClass = "") {
+    let el = this._partialEl;
+    if (!el) {
+      el = document.createElement("div");
+      this.output.appendChild(el);
     }
-    if (this._partialEl) {
-      this._partialEl.className = "term-line";
-      this._partialEl = null;
-    }
-    const el = document.createElement("div");
-    el.className = className;
     el.textContent = text;
-    this.output.appendChild(el);
-    if (replacePartial) this._partialEl = el;
+    el.className = ("term-line " + extraClass + (partial ? " term-line-partial" : "")).trim();
+    this._partialEl = partial ? el : null;
   }
 
   _flushPartial() {
-    if (this._lineBuffer) {
-      this._appendLine(this._lineBuffer, "term-line");
-      this._lineBuffer = "";
-    }
     if (this._partialEl) {
       this._partialEl.className = "term-line";
       this._partialEl = null;
     }
+    this._lineBuffer = "";
   }
 
   /* Chamado quando o programa executa `leia`. Retorna uma Promise com o texto. */
@@ -109,7 +104,7 @@ export class Terminal {
         // ecoa o que foi digitado como uma linha normal
         wrap.remove();
         this._inputLine = null;
-        this._appendLine("❯ " + value, "term-line term-echo");
+        this._setLine("❯ " + value, false, "term-echo");
         this._scroll();
         resolve(value);
       };
