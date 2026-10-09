@@ -2,7 +2,7 @@
  * a formatação — palavras reservadas da linguagem em negrito. Coloca no
  * clipboard tanto text/html (com <b>) quanto text/plain. */
 
-import { isKeyword } from "./peteqs-lang.js";
+import { isKeyword, isResultado } from "./peteqs-lang.js";
 
 const IDENT_RE = /[A-Za-z_À-ɏ][A-Za-z0-9_À-ɏ]*/y;
 
@@ -53,7 +53,7 @@ function toHtml(code) {
     const m = IDENT_RE.exec(code);
     if (m && m.index === i) {
       const word = m[0];
-      out += isKeyword(word) ? `<b>${escapeHtml(word)}</b>` : escapeHtml(word);
+      out += isKeyword(word) || isResultado(word) ?`<b>${escapeHtml(word)}</b>` : escapeHtml(word);
       i += word.length;
       continue;
     }

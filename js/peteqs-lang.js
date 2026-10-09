@@ -37,6 +37,11 @@ export function isBuiltin(word) {
   return BUILTIN_SET.has(normalize(word));
 }
 
+// 'resultado' não é reservada, mas é destacada em negrito (valor de retorno)
+export function isResultado(word) {
+  return normalize(word) === "resultado";
+}
+
 /* Parser de fluxo para CodeMirror 6 (StreamLanguage). */
 export const peteqsStreamParser = {
   name: "peteqs",
@@ -90,6 +95,7 @@ export const peteqsStreamParser = {
       const text = word[0];
       if (isKeyword(text)) return "keyword";
       if (isBuiltin(text)) return "builtin";
+      if (isResultado(text)) return "variableName.special";
       return "variableName";
     }
 

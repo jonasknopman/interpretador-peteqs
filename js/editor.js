@@ -24,6 +24,8 @@ const highlightStyle = HighlightStyle.define([
   { tag: tags.comment, color: "var(--syntax-comment)", fontStyle: "italic" },
   { tag: tags.operator, color: "var(--syntax-operator)" },
   { tag: tags.variableName, color: "var(--syntax-text)" },
+  // 'resultado' (valor de retorno das funções): mesma cor, em negrito
+  { tag: tags.special(tags.variableName), color: "var(--syntax-text)", fontWeight: "700" },
 ]);
 
 const editorTheme = EditorView.theme({
