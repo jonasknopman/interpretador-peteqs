@@ -60,21 +60,21 @@ convertido para inteiro, depois real; se não for número, fica como cadeia.
 `leia frase`, com o usuário digitando `PETEQS`, guarda a cadeia; depois `frase[3]`
 vale `'T'` e `tamanho(frase)` vale `6`.
 
-### Saída — `imprima`
+### Saída — `imprima` e `imprimaln`
 ```
 imprima "Área = ", area
-imprima a, ' ', b
+imprimaln a, ' ', b
 ```
-Os itens são concatenados sem separador; há uma quebra de linha ao fim de cada `imprima`.
+Os itens são concatenados sem separador. `imprima` **não** muda de linha ao final; `imprimaln` escreve e depois muda de linha.
 
 ### Condicional — `se`
 ```
 se x > 0 então
-    imprima "positivo"
+    imprimaln "positivo"
 senão se x < 0 então
-    imprima "negativo"
+    imprimaln "negativo"
 senão
-    imprima "zero"
+    imprimaln "zero"
 fim se
 ```
 O `então` é opcional. `fim se` também pode ser escrito `fimse`.
@@ -89,7 +89,7 @@ fim enquanto
 ### Laço `para`
 ```
 para i <- 1 até 5 faça
-    imprima i
+    imprimaln i
 próximo i
 ```
 O passo é sempre +1. Se o início for maior que o fim, o laço não executa nenhuma vez.
@@ -114,7 +114,7 @@ fim
 - `saídas:` — passagem **por referência** (o valor é devolto à variável do chamador).
 - Numa função, a variável `resultado` define o valor de retorno.
 - Chamada: `Converte(dolar, real)` — argumentos na ordem `entradas`, depois `saídas`.
-- Funções podem ser usadas dentro de expressões: `imprima soma(1, 2)`.
+- Funções podem ser usadas dentro de expressões: `imprimaln soma(1, 2)`.
 
 ### Com variáveis públicas
 ```

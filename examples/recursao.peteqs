@@ -8,7 +8,7 @@ inicio
 fim
 
 inicio
-    imprima "Calcular o fatorial de:"
+    imprimaln "Calcular o fatorial de:"
     leia x
-    imprima x, "! = ", fatorial(x)
+    imprimaln x, "! = ", fatorial(x)
 fim

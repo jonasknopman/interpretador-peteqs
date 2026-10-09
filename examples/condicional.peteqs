@@ -1,11 +1,11 @@
 inicio
-    imprima "Digite um número:"
+    imprimaln "Digite um número:"
     leia x
     se x > 0 então
-        imprima "Positivo"
+        imprimaln "Positivo"
     senão se x < 0 então
-        imprima "Negativo"
+        imprimaln "Negativo"
     senão
-        imprima "Zero"
+        imprimaln "Zero"
     fim se
 fim

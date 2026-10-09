@@ -6,7 +6,7 @@ Uso típico::
     from peteqs.io_base import BufferedIO
 
     io = BufferedIO(["5"])
-    await run("inicio\\n leia n\\n imprima n * 2\\n fim", io)
+    await run("inicio\\n leia n\\n imprimaln n * 2\\n fim", io)
     print(io.output)   # "10\\n"
 """
 

@@ -5,8 +5,8 @@ inicio
 fim
 
 inicio
-    imprima "Digite um número:"
+    imprimaln "Digite um número:"
     leia x
     Dobro(x, d)
-    imprima "O dobro de ", x, " é ", d
+    imprimaln "O dobro de ", x, " é ", d
 fim

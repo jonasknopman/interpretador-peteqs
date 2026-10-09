@@ -138,7 +138,7 @@ class Interpreter:
 
     async def _exec_imprima(self, node: ast.Imprima) -> None:
         parts = [format_value(await self._eval(part)) for part in node.parts]
-        await self.io.saida("".join(parts) + "\n")
+        await self.io.saida("".join(parts) + ("\n" if node.newline else ""))
 
     async def _exec_if(self, node: ast.If) -> None:
         cond = to_bool(await self._eval(node.cond), node.line, "condição do 'se'")

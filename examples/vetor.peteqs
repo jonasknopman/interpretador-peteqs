@@ -10,5 +10,5 @@ inicio
             maior <- V[i]
         fim se
     fim para
-    imprima "Maior elemento: ", maior
+    imprimaln "Maior elemento: ", maior
 fim

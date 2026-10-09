@@ -10,7 +10,7 @@ const STORAGE_KEY_CODE = "peteqs.rascunho";
 const STORAGE_KEY_THEME = "peteqs.tema";
 
 const DEFAULT_PROGRAM = `inicio
-    imprima "Olá, mundo!"
+    imprimaln "Olá, mundo!"
 fim
 `;
 

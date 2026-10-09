@@ -4,8 +4,8 @@ inicio
 fim
 
 inicio
-    imprima "Quantos dólares?"
+    imprimaln "Quantos dólares?"
     leia dolar
     Converte(dolar, real)
-    imprima "R$ ", real
+    imprimaln "R$ ", real
 fim

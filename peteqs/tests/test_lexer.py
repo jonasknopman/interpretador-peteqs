@@ -47,6 +47,11 @@ def test_comentarios_linha_e_bloco():
     assert kinds.count(TokenType.NUMERO) == 1
 
 
+def test_imprimaln_e_token_proprio():
+    kinds = types("imprima 1\nimprimaln 2")
+    assert TokenType.IMPRIMA in kinds and TokenType.IMPRIMALN in kinds
+
+
 def test_atribuicao_e_operadores():
     kinds = types("x <- a <> b <= c >= d")
     assert kinds == [
@@ -70,7 +75,7 @@ def test_en_dash_vira_menos():
 
 def test_string_nao_fechada():
     with pytest.raises(PeteqsSyntaxError):
-        tokenize("imprima 'oi")
+        tokenize("imprimaln 'oi")
 
 
 def test_comentario_bloco_nao_fechado():

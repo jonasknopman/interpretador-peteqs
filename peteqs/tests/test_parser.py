@@ -11,14 +11,14 @@ def main_stmts(source: str):
 
 
 def test_programa_minimo():
-    prog = parse("inicio\n imprima 1\nfim")
+    prog = parse("inicio\n imprimaln 1\nfim")
     assert len(prog.main.statements) == 1
     assert isinstance(prog.main.statements[0], ast.Imprima)
 
 
 def test_falta_inicio_fim():
     with pytest.raises(PeteqsSyntaxError):
-        parse("imprima 1")
+        parse("imprimaln 1")
 
 
 def test_precedencia_mul_e_e_no_mesmo_nivel():
@@ -61,9 +61,9 @@ def test_literal_de_vetor():
 def test_se_senao_se():
     (stmt,) = main_stmts(
         "inicio\n"
-        " se x = 1 então\n imprima 'um'\n"
-        " senão se x = 2 então\n imprima 'dois'\n"
-        " senão\n imprima 'outro'\n"
+        " se x = 1 então\n imprimaln 'um'\n"
+        " senão se x = 2 então\n imprimaln 'dois'\n"
+        " senão\n imprimaln 'outro'\n"
         " fim se\n"
         "fim"
     )
@@ -73,8 +73,8 @@ def test_se_senao_se():
 
 
 def test_para_com_proximo_e_com_fim_para():
-    a = main_stmts("inicio\n para i <- 1 até 3 faça\n imprima i\n próximo i\nfim")
-    b = main_stmts("inicio\n para i <- 1 até 3 faça\n imprima i\n fim para\nfim")
+    a = main_stmts("inicio\n para i <- 1 até 3 faça\n imprimaln i\n próximo i\nfim")
+    b = main_stmts("inicio\n para i <- 1 até 3 faça\n imprimaln i\n fim para\nfim")
     assert isinstance(a[0], ast.For) and isinstance(b[0], ast.For)
 
 
@@ -84,7 +84,7 @@ def test_funcao_e_procedimento_com_parametros():
         "inicio\n resultado <- a + b\nfim\n"
         "procedimento troca(saídas: x, y)\n"
         "inicio\n z <- x\n x <- y\n y <- z\nfim\n"
-        "inicio\n imprima soma(1, 2)\nfim"
+        "inicio\n imprimaln soma(1, 2)\nfim"
     )
     nomes = {s.name for s in prog.subprograms}
     assert nomes == {"soma", "troca"}
@@ -99,7 +99,7 @@ def test_variaveis_publicas():
         "variáveis públicas\n Far, Cel\n"
         "procedimento Converte\n"
         "inicio\n Cel <- (Far - 32) / 1.8\nfim\n"
-        "inicio\n leia Far\n Converte\n imprima Cel\nfim"
+        "inicio\n leia Far\n Converte\n imprimaln Cel\nfim"
     )
     assert prog.public_vars == ["Far", "Cel"]
     assert prog.subprograms[0].inputs == [] and prog.subprograms[0].outputs == []
@@ -107,5 +107,5 @@ def test_variaveis_publicas():
 
 def test_erro_aponta_linha():
     with pytest.raises(PeteqsSyntaxError) as exc:
-        parse("inicio\n imprima )\nfim")
+        parse("inicio\n imprimaln )\nfim")
     assert exc.value.line == 2

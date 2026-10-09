@@ -215,7 +215,7 @@ class Parser:
         tok = self._cur
         if tok.type == TokenType.LEIA:
             return self._parse_leia()
-        if tok.type == TokenType.IMPRIMA:
+        if tok.type in (TokenType.IMPRIMA, TokenType.IMPRIMALN):
             return self._parse_imprima()
         if tok.type == TokenType.SE:
             return self._parse_se()
@@ -290,7 +290,7 @@ class Parser:
         while self._match(TokenType.VIRGULA):
             parts.append(self._parse_expr())
         self._end_of_statement()
-        return ast.Imprima(parts=parts, line=kw.line)
+        return ast.Imprima(parts=parts, newline=kw.type == TokenType.IMPRIMALN, line=kw.line)
 
     def _parse_se(self) -> ast.If:
         kw = self._expect(TokenType.SE, "'se'")

@@ -1,5 +1,5 @@
 inicio
-    imprima "Qual é o seu nome?"
+    imprimaln "Qual é o seu nome?"
     leia nome
-    imprima "Olá, ", nome, "!"
+    imprimaln "Olá, ", nome, "!"
 fim

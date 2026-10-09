@@ -1,8 +1,8 @@
 inicio
-    imprima "10 / 4 = ", 10 / 4
-    imprima "10.0 / 4 = ", 10.0 / 4
+    imprimaln "10 / 4 = ", 10 / 4
+    imprimaln "10.0 / 4 = ", 10.0 / 4
     media <- (7 + 8 + 10) / 3
-    imprima "média com / 3 = ", media
+    imprimaln "média com / 3 = ", media
     media <- (7 + 8 + 10) / 3.0
-    imprima "média com / 3.0 = ", media
+    imprimaln "média com / 3.0 = ", media
 fim

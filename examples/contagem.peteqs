@@ -1,5 +1,5 @@
 inicio
     para i <- 1 até 5 faça
-        imprima "passo ", i
+        imprimaln "passo ", i
     próximo i
 fim

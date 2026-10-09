@@ -1,3 +1,3 @@
 inicio
-    imprima "Olá, mundo!"
+    imprimaln "Olá, mundo!"
 fim

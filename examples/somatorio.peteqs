@@ -5,5 +5,5 @@ inicio
         soma <- soma + i
         i <- i + 1
     fim enquanto
-    imprima "Soma de 1 a 10: ", soma
+    imprimaln "Soma de 1 a 10: ", soma
 fim

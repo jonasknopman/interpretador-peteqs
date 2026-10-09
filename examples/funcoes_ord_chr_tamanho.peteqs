@@ -1,6 +1,6 @@
 inicio
-    imprima ord('A')
-    imprima chr(65)
-    imprima tamanho("@123umaString")
-    imprima tamanho([10, 20, 30, 40, 60])
+    imprimaln ord('A')
+    imprimaln chr(65)
+    imprimaln tamanho("@123umaString")
+    imprimaln tamanho([10, 20, 30, 40, 60])
 fim

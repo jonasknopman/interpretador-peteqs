@@ -9,7 +9,7 @@
 // forma normalizada (minúscula, sem acento) das palavras reservadas
 export const KEYWORDS = [
   "inicio", "fim", "programa", "variaveis", "publicas",
-  "leia", "imprima",
+  "leia", "imprima", "imprimaln",
   "se", "entao", "senao", "enquanto", "faca",
   "para", "ate", "proximo",
   "funcao", "procedimento", "entradas", "entrada", "saidas", "saida",

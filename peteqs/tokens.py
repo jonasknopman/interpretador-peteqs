@@ -21,6 +21,7 @@ class TokenType(Enum):
     PUBLICAS = auto()
     LEIA = auto()
     IMPRIMA = auto()
+    IMPRIMALN = auto()
     SE = auto()
     ENTAO = auto()
     SENAO = auto()
@@ -74,6 +75,7 @@ KEYWORDS: dict[str, TokenType] = {
     "publicas": TokenType.PUBLICAS,
     "leia": TokenType.LEIA,
     "imprima": TokenType.IMPRIMA,
+    "imprimaln": TokenType.IMPRIMALN,
     "se": TokenType.SE,
     "entao": TokenType.ENTAO,
     "senao": TokenType.SENAO,

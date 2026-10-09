@@ -48,6 +48,7 @@ class Leia(Node):
 @dataclass
 class Imprima(Node):
     parts: list[Node]
+    newline: bool = False          # True em 'imprimaln'
 
 
 @dataclass

@@ -1,9 +1,9 @@
 { O comando 'leia' pode ler uma cadeia de caracteres.
   A cadeia fica indexada a partir de 1, como um vetor. }
 inicio
-    imprima "Entre com uma cadeia de caracteres:"
+    imprimaln "Entre com uma cadeia de caracteres:"
     leia frase
-    imprima frase
-    imprima frase[3]
-    imprima "A cadeia tem ", tamanho(frase), " caracteres"
+    imprimaln frase
+    imprimaln frase[3]
+    imprimaln "A cadeia tem ", tamanho(frase), " caracteres"
 fim
