@@ -1,0 +1,15 @@
+{ Percorre a cadeia, monta a versão invertida e compara com a original. }
+inicio
+    imprima "Digite uma palavra: "
+    leia palavra
+    invertida <- ""
+    para i <- 1 até tamanho(palavra) faça
+        invertida <- palavra[i] + invertida
+    próximo i
+    imprimaln "Ao contrário: ", invertida
+    se palavra = invertida então
+        imprimaln "É um palíndromo"
+    senão
+        imprimaln "Não é um palíndromo"
+    fim se
+fim

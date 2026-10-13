@@ -1,0 +1,15 @@
+{ Recursão: cada termo é a soma dos dois anteriores. }
+função fibonacci(entradas: n)
+inicio
+    se n <= 2 então
+        resultado <- 1
+    senão
+        resultado <- fibonacci(n - 1) + fibonacci(n - 2)
+    fim se
+fim
+
+inicio
+    para i <- 1 até 10 faça
+        imprimaln "fibonacci(", i, ") = ", fibonacci(i)
+    próximo i
+fim

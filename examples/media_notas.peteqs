@@ -1,0 +1,14 @@
+{ Divisão entre inteiros trunca; se um dos lados for real, a divisão é real. }
+inicio
+    imprimaln "Informe duas notas:"
+    leia nota1, nota2
+    soma <- nota1 + nota2
+    imprimaln "Média com / 2:   ", soma / 2
+    media <- soma / 2.0
+    imprimaln "Média com / 2.0: ", media
+    se media >= 6 então
+        imprimaln "Acima da média"
+    senão
+        imprimaln "Abaixo da média"
+    fim se
+fim

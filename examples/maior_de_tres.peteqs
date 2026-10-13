@@ -1,0 +1,16 @@
+{ Compara três números. Com 'e' e 'ou', use parênteses em volta das comparações. }
+inicio
+    imprimaln "Informe três números:"
+    leia a, b, c
+    se (a >= b) e (a >= c) então
+        maior <- a
+    senão se (b >= a) e (b >= c) então
+        maior <- b
+    senão
+        maior <- c
+    fim se
+    imprimaln "O maior é ", maior
+    se (a = b) ou (b = c) ou (a = c) então
+        imprimaln "Há valores repetidos"
+    fim se
+fim

@@ -1,0 +1,7 @@
+inicio
+    imprima "Tabuada de qual número? "
+    leia n
+    para i <- 1 até 10 faça
+        imprimaln n, " x ", i, " = ", n * i
+    próximo i
+fim

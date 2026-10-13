@@ -1,0 +1,11 @@
+{ Divisão inteira e 'mod' separam os dígitos de um número, um de cada vez. }
+inicio
+    imprima "Número inteiro positivo: "
+    leia n
+    soma <- 0
+    enquanto n > 0 faça
+        soma <- soma + n mod 10
+        n <- n / 10
+    fim enquanto
+    imprimaln "Soma dos dígitos: ", soma
+fim

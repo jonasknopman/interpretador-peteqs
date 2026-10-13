@@ -1,0 +1,14 @@
+{ Função com dois parâmetros de entrada; o valor devolvido vai em 'resultado'. }
+função potencia(entradas: base, expoente)
+inicio
+    resultado <- 1
+    para k <- 1 até expoente faça
+        resultado <- resultado * base
+    próximo k
+fim
+
+inicio
+    imprimaln "2 elevado a 10 = ", potencia(2, 10)
+    imprimaln "5 ao cubo = ", potencia(5, 3)
+    imprimaln "7 elevado a 0 = ", potencia(7, 0)
+fim

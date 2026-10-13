@@ -1,0 +1,14 @@
+{ Inverte um vetor trocando os elementos das pontas, de fora para dentro. }
+inicio
+    n <- 5
+    imprimaln "Digite ", n, " números:"
+    para i <- 1 até n faça
+        leia v[i]
+    próximo i
+    para i <- 1 até n / 2 faça
+        temp <- v[i]
+        v[i] <- v[n + 1 - i]
+        v[n + 1 - i] <- temp
+    próximo i
+    imprimaln "Invertido: ", v
+fim

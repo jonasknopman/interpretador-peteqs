@@ -1,0 +1,29 @@
+{ Variáveis públicas são enxergadas por todos os subprogramas. }
+variáveis públicas
+    saldo, valor
+
+procedimento Deposita
+inicio
+    saldo <- saldo + valor
+fim
+
+procedimento Saca
+inicio
+    se valor > saldo então
+        imprimaln "Saldo insuficiente para sacar ", valor
+    senão
+        saldo <- saldo - valor
+    fim se
+fim
+
+inicio
+    saldo <- 100
+    valor <- 40
+    Deposita
+    imprimaln "Saldo após o depósito: ", saldo
+    valor <- 500
+    Saca
+    valor <- 90
+    Saca
+    imprimaln "Saldo final: ", saldo
+fim

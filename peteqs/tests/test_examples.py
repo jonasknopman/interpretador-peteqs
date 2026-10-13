@@ -17,12 +17,14 @@ EXAMPLES_DIR = pathlib.Path(__file__).resolve().parents[2] / "examples"
 
 # entradas fornecidas a cada exemplo (uma string por 'leia')
 INPUTS: dict[str, list[str]] = {
-    "leia_nome": ["Maria"],
-    "condicional": ["7"],
-    "procedimento": ["10"],
-    "proc_saida": ["4"],
-    "recursao": ["5"],
+    "boas_vindas": ["Marina", "1990", "2026"],
+    "media_notas": ["7", "4"],
+    "maior_de_tres": ["4", "9", "9"],
+    "tabuada": ["7"],
+    "soma_digitos": ["2718"],
+    "vetor_invertido": ["1", "2", "3", "4", "5"],
     "string_indexada": ["PETEQS"],
+    "palindromo": ["arara"],
 }
 
 CASES = sorted(p.stem for p in EXAMPLES_DIR.glob("*.peteqs"))

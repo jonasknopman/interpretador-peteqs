@@ -1,0 +1,16 @@
+{ Parâmetros de 'saídas' são passados por referência:
+  o procedimento altera as variáveis de quem o chamou. }
+procedimento Troca(saídas: a, b)
+inicio
+    temp <- a
+    a <- b
+    b <- temp
+fim
+
+inicio
+    x <- 10
+    y <- 25
+    imprimaln "Antes:  x = ", x, "  y = ", y
+    Troca(x, y)
+    imprimaln "Depois: x = ", x, "  y = ", y
+fim

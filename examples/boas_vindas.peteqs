@@ -1,0 +1,10 @@
+{ Lê três dados do usuário e usa os valores numa expressão. }
+inicio
+    imprima "Como você se chama? "
+    leia nome
+    imprima "Em que ano você nasceu? "
+    leia nascimento
+    imprima "Em que ano estamos? "
+    leia atual
+    imprimaln "Prazer, ", nome, "! Você tem cerca de ", atual - nascimento, " anos."
+fim

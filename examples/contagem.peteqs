@@ -1,5 +1,0 @@
-inicio
-    para i <- 1 até 5 faça
-        imprimaln "passo ", i
-    próximo i
-fim

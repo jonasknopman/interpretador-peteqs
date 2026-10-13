@@ -1,8 +1,0 @@
-inicio
-    imprimaln "10 / 4 = ", 10 / 4
-    imprimaln "10.0 / 4 = ", 10.0 / 4
-    media <- (7 + 8 + 10) / 3
-    imprimaln "média com / 3 = ", media
-    media <- (7 + 8 + 10) / 3.0
-    imprimaln "média com / 3.0 = ", media
-fim
