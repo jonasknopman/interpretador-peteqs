@@ -111,7 +111,7 @@ inicio
 fim
 ```
 - `entradas:` — passagem **por valor** (o subprograma recebe uma cópia).
-- `saídas:` — passagem **por referência** (o valor é devolto à variável do chamador).
+- `saídas:` — passagem **por referência** (o valor é devolvido à variável do chamador).
 - Numa função, a variável `resultado` define o valor de retorno.
 - Chamada: `Converte(dolar, real)` — argumentos na ordem `entradas`, depois `saídas`.
 - Funções podem ser usadas dentro de expressões: `imprimaln soma(1, 2)`.
