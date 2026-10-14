@@ -1,9 +1,10 @@
 # Editor PETEQS
 
 Interpretador da pseudolinguagem **PETEQS** (curso CEDERJ/UFF *Projeto e
-Desenvolvimento de Algoritmo*), como aplicação web — inspirado em
-<https://peteqs.vercel.app/>, com **entrada de dados interativa**: o programa pausa
-no `leia` e espera o usuário digitar no terminal, como no modo interativo do Python.
+Desenvolvimento de Algoritmo*), como aplicação web, com **entrada de dados
+interativa**: o programa pausa no `leia` e espera o usuário digitar no terminal, como
+no modo interativo do Python. O layout da interface foi inspirado no interpretador de
+João Batista Lopes Coelho; veja a seção [Créditos](#créditos).
 
 ## Como funciona
 
@@ -52,5 +53,16 @@ Em *Settings → Pages*, escolha **GitHub Actions** como origem. O workflow
 `.github/workflows/deploy.yml` publica a raiz do repositório a cada push na `main`.
 O arquivo `.nojekyll` garante que a pasta `peteqs/` seja servida.
 
-A sintaxe da linguagem segue **apenas os slides do curso**; o site de referência serve
-só de inspiração para o layout.
+A sintaxe e as regras da linguagem seguem **apenas os slides do curso**.
+
+## Créditos
+
+- **Autoria e coordenação:** Jonas Knopman e Adriano Joaquim de Oliveira Cruz,
+  professores da disciplina *Projeto e Desenvolvimento de Algoritmo* (CEDERJ).
+- **Desenvolvimento:** código gerado com o Claude Code (Anthropic), a partir dos slides
+  do curso, que definem a sintaxe e as regras da linguagem.
+- **Interface:** inspirada no interpretador PETEQS de **João Batista Lopes Coelho**,
+  tutor de Saquarema (<https://peteqs.vercel.app/>). O protótipo dele mostrou que a
+  ferramenta valia a pena, e o layout e a organização da tela serviram de referência.
+  Do site dele foi consultado apenas o que aparece na tela: o código-fonte não foi
+  acessado, e os programas de exemplo atuais deste repositório são originais.
