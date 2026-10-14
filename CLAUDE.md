@@ -17,6 +17,10 @@ A sintaxe segue **apenas os slides do curso**. O site `peteqs.vercel.app` serve 
 inspiração de layout — não copiar a sintaxe dele. Em caso de dúvida sobre como a linguagem
 deve se comportar, perguntar ao Jonas (professor da disciplina) em vez de inventar.
 
+Não copiar exemplos, textos nem código de outros interpretadores. O que vem de fora é
+só a inspiração de layout; os programas de exemplo, as mensagens e o código são
+originais deste repositório.
+
 Flexibilizações já autorizadas em relação aos slides:
 
 - palavras-chave não distinguem maiúsculas de minúsculas;
@@ -105,7 +109,7 @@ python -m peteqs.tests.test_examples   # regenera os .out dos exemplos
 - Abrir `index.html` por `file://` **não** executa programas (o navegador bloqueia o
   Worker/Pyodide); o app detecta isso e mostra instruções.
 - A suíte tem lexer, parser, interpretador e os exemplos. Estado na última verificação:
-  **71 testes passando**. O CI (`ci.yml`) roda no Python 3.12.
+  **72 testes passando**. O CI (`ci.yml`) roda no Python 3.12.
 - Os testes usam `peteqs/tests/helpers.py` (`run_program`, `run_io`, `expect_error`) com
   `BufferedIO`. Em `test_examples.py`, o dicionário `INPUTS` diz quais entradas cada exemplo recebe.
 - **Só regenere os `.out` quando a mudança de saída for intencional** — eles são o gabarito.
@@ -144,9 +148,19 @@ Conferir todos:
 3. `imprimaln` adicionado; `imprima` deixou de mudar de linha.
 4. Terminal: corrigida a saída duplicada quando a linha ficava parcial (`imprima` sem quebra
    seguido de fim de programa, quebra ou `leia`).
+5. Exemplos reescritos do zero (11 programas originais, mais string_indexada e
+   funcoes_ord_chr_tamanho); botões do rodapé atualizados.
+6. README com seção "Créditos" (autoria de Jonas Knopman e Adriano Joaquim de Oliveira
+   Cruz; interface inspirada no interpretador de João Batista Lopes Coelho).
+7. Rodapé do site com os créditos (somente texto, sem links) e aviso do cabeçalho
+   trocado para "Em fase de testes: podem existir erros."
 
 ## Pontos em aberto / ideias
 
 - Nenhum item pendente registrado no repositório. Registrar aqui o que for combinado em
   conversa e não virar código imediatamente.
-- Aviso na interface: o app se descreve como "Versão de teste, em desenvolvimento".
+- Aviso na interface: o app se descreve como "Em fase de testes: podem existir erros."
+- O repositório ainda não tem licença (MIT foi sugerida; decisão do Jonas).
+- Proteção da branch main (Settings → Branches) é opcional e ainda não foi ativada.
+- O rodapé do site não tem links para o GitHub nem para o site do João, por decisão
+  do Jonas; não acrescentar.
