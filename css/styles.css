@@ -214,6 +214,7 @@ button:hover { background: var(--bg-elev-2); }
 .examples { display: flex; flex-wrap: wrap; gap: 6px; }
 .example-btn { padding: 4px 9px; font-size: 12px; border-radius: 999px; }
 .ref { color: var(--text-dim); margin-left: auto; }
+.credits { flex-basis: 100%; color: var(--text-dim); font-size: 11px; }
 
 /* ================================================================== ajuda */
 .help-dialog {
