@@ -157,8 +157,7 @@ Conferir todos:
 
 ## Pontos em aberto / ideias
 
-- Nenhum item pendente registrado no repositório. Registrar aqui o que for combinado em
-  conversa e não virar código imediatamente.
+- Registrar aqui o que for combinado em conversa e não virar código imediatamente.
 - Aviso na interface: o app se descreve como "Em fase de testes: podem existir erros."
 - O repositório ainda não tem licença (MIT foi sugerida; decisão do Jonas).
 - Proteção da branch main (Settings → Branches) é opcional e ainda não foi ativada.
