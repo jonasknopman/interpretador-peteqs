@@ -59,6 +59,7 @@ A sintaxe e as regras da linguagem seguem **apenas os slides do curso**.
 
 - **Autoria e coordenação:** Jonas Knopman e Adriano Joaquim de Oliveira Cruz,
   professores da disciplina *Projeto e Desenvolvimento de Algoritmo* (CEDERJ).
+- **Colaboração:** João Batista Lopes Coelho, tutor de Saquarema.
 - **Desenvolvimento:** código gerado com o Claude Code (Anthropic), a partir dos slides
   do curso, que definem a sintaxe e as regras da linguagem.
 - **Interface:** inspirada no interpretador PETEQS de **João Batista Lopes Coelho**,
