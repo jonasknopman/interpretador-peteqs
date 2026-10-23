@@ -152,8 +152,9 @@ Conferir todos:
    funcoes_ord_chr_tamanho); botões do rodapé atualizados.
 6. README com seção "Créditos" (autoria de Jonas Knopman e Adriano Joaquim de Oliveira
    Cruz; interface inspirada no interpretador de João Batista Lopes Coelho).
-7. Rodapé do site com os créditos (somente texto, sem links) e aviso do cabeçalho
-   trocado para "Em fase de testes: podem existir erros."
+7. Rodapé do site com os créditos (somente texto, sem links): "Autoria: Jonas Knopman e
+   Adriano Joaquim de Oliveira Cruz · Colaboração: João Batista Lopes Coelho"; aviso do
+   cabeçalho trocado para "Em fase de testes: podem existir erros."
 
 ## Pontos em aberto / ideias
 
@@ -163,3 +164,6 @@ Conferir todos:
 - Proteção da branch main (Settings → Branches) é opcional e ainda não foi ativada.
 - O rodapé do site não tem links para o GitHub nem para o site do João, por decisão
   do Jonas; não acrescentar.
+- O João Batista Lopes Coelho pediu para ser colaborador no GitHub; ainda NÃO autorizado.
+  Antes de qualquer convite, ativar a proteção da branch main (exigir pull request).
+  Não registrar usuário nem e-mail dele no repositório.
