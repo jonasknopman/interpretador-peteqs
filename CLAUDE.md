@@ -76,8 +76,14 @@ O `leia` faz `await io.entrada(...)`. Por isso **todo o interpretador é `async`
 | `fileio.js` | Abrir/Salvar `.peteqs` (File System Access API; fallback para `<input>`/download) |
 | `examples.js` | botões de exemplo do rodapé; carrega `examples/<id>.peteqs` |
 
-Uso das bibliotecas de front-end: CodeMirror via *import map* apontando para `esm.sh`
-(`index.html`). Não há *build step* nem `package.json`.
+Uso das bibliotecas de front-end: CodeMirror via *import map* apontando para o jsDelivr
+(`.../npm/<pacote>@<versão>/+esm`, em `index.html`). Não há *build step* nem `package.json`.
+O `esm.sh` foi abandonado em 30/10/2026: ele devolvia 500/503 ao resolver dependências
+transitivas, o `editor.js` não carregava e o site ficava sem editor e sem botões de exemplo.
+O jsDelivr resolve algumas dependências para versões diferentes das fixadas (hoje
+`@codemirror/view@6.33.0` e `@lezer/common@1.2.3`); o *import map* remapeia essas URLs para as
+versões principais, evitando instâncias duplicadas. Ao atualizar o CodeMirror, conferir de novo
+quais URLs `+esm` cada pacote importa e testar em `localhost` antes do push.
 
 ## Comportamentos da linguagem que não são óbvios
 
